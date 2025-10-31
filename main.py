@@ -79,3 +79,18 @@ async def deploy_route(startup_name: str):
         logger.error(f"Deployment failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
+
+# Path to React build folder
+FRONTEND_PATH = os.path.join(os.path.dirname(__file__), "dist")
+
+# Serve static assets (JS/CSS/images)
+app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_PATH, "assets")), name="assets")
+
+# Serve index.html for all other routes (let React handle routing)
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    index_file = os.path.join(FRONTEND_PATH, "index.html")
+    return FileResponse(index_file)
