@@ -1,0 +1,41 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pym
+
+# Virtual environment (if any)
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Generated sites (you probably don't want to commit generated HTML/CSS/JS)
+generated_sites/
+
+# IDE/project settings
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Other temporary files
+*.tmp
+*.swp
