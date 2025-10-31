@@ -27,11 +27,6 @@ generated_sites/
 # Environment variables
 .env
 
-# Python packaging
-*.egg-info/
-dist/
-build/
-.eggs/
 
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
